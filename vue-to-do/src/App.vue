@@ -19,18 +19,7 @@
     },
     data() {
       return {
-        todos: [
-          {
-            id: 1,
-            title: "One",
-            completed: true
-          },
-          {
-            id: 2,
-            title: "Two",
-            completed: false
-          }
-        ]
+        todos: []
       }
     },
     methods: {
