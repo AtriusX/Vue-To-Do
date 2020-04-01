@@ -25,10 +25,15 @@
     methods: {
       deleteTodo(id) {
         this.todos = this.todos.filter(t => t.id != id);
+        window.localStorage.setItem('todos', JSON.stringify(this.todos));
       },
       addTodo(todo) {
         this.todos.push(todo)
+        window.localStorage.setItem('todos', JSON.stringify(this.todos));
       }
+    },
+    mounted() {
+      this.todos = JSON.parse(window.localStorage.getItem('todos'));
     }
   }
 </script>
