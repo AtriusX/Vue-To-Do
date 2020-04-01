@@ -21,7 +21,6 @@ export default {
     div {
         display: flex;
         padding: 5px;
-        border-bottom: 0.5px solid rgba(211, 211, 211, 0.4);
     }
 
    .is-complete {

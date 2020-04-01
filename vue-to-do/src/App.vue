@@ -10,6 +10,9 @@
   import AddTodo from './components/layout/AddTodo'
   import Header from './components/layout/Header'
   import Todos from './components/Todos'
+  
+  const storage = window.localStorage;
+  
   export default {
     name: 'app',
     components: {
@@ -25,15 +28,15 @@
     methods: {
       deleteTodo(id) {
         this.todos = this.todos.filter(t => t.id != id);
-        window.localStorage.setItem('todos', JSON.stringify(this.todos));
+        storage.setItem('todos', JSON.stringify(this.todos));
       },
       addTodo(todo) {
         this.todos.push(todo)
-        window.localStorage.setItem('todos', JSON.stringify(this.todos));
+        storage.setItem('todos', JSON.stringify(this.todos));
       }
     },
     mounted() {
-      this.todos = JSON.parse(window.localStorage.getItem('todos'));
+      this.todos = JSON.parse(storage.getItem('todos'));
     }
   }
 </script>
