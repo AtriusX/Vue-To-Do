@@ -12,8 +12,9 @@ export default {
 
 <style scoped>
     .header {
-        background: #333;
+        background: #888;
         color: white;
-        padding: 0.25rem;
+        padding: .25rem 1.5rem;
+        border-radius: 15px;
     }
 </style>
