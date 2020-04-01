@@ -31,7 +31,7 @@
         storage.setItem('todos', JSON.stringify(this.todos));
       },
       addTodo(todo) {
-        this.todos.push(todo)
+        this.todos = [...this.todos, todo]
         storage.setItem('todos', JSON.stringify(this.todos));
       }
     },
