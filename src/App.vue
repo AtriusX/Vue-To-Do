@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header />
-    <Todos v-bind:todos="todos" v-on:del-todo="deleteTodo"/>
+    <Todos v-bind:todos="todos" v-on:del-todo="deleteTodo" v-on:update-todo="updateTodos"/>
     <AddTodo v-on:add-todo="addTodo"/>
   </div>
 </template>
@@ -34,6 +34,9 @@
         if (this.todos === null)
           this.todos = [];
         this.todos.push(todo);
+        storage.setItem('todos', JSON.stringify(this.todos));
+      },
+      updateTodos() {
         storage.setItem('todos', JSON.stringify(this.todos));
       }
     },
